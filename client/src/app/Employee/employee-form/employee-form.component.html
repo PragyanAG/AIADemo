@@ -1,0 +1,91 @@
+<div class="grid-container">
+    <div>
+        <h3>New Employee
+         <button class="showbtn" mat-raised-button (click)="btnEmployeeList();">
+            <mat-icon mat-icon-button colour="white">reorder</mat-icon>
+            &nbsp;Show Employee List
+          </button>
+  
+        </h3>
+      </div> 
+      
+      <table border="1">
+          <tr>
+              <td style="padding-left: 5px; text-align: center;">
+                <label for="empid">Employee ID </label>
+              </td>
+              <td style="text-align: center;">
+                <input
+                class="form-control"
+                id="empid"
+                required
+                [(ngModel)]="employee.empid"
+                name="empid"
+              />
+              </td>
+          </tr>
+          <tr>
+            <td style="padding-left: 5px; text-align: center;">
+              <label for="name">Name </label>
+            </td>
+            <td style="text-align: center;">
+              <input
+              class="form-control"
+              id="name"
+              required
+              [(ngModel)]="employee.name"
+              name="name"
+            />
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-left: 5px; text-align: center;">
+              <label for="gender">Gender</label>
+            </td>
+            <td style="text-align: center;">
+                <mat-radio-group  [(ngModel)]="employee.gender">
+                    <mat-radio-button *ngFor="let Gender of Genders" [value]="Gender"> {{Gender}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-left: 5px; text-align: center;">
+              <label for="age">Age </label>
+            </td>
+            <td style="text-align: center;">
+              <input
+              class="form-control"
+              id="age"
+              [(ngModel)]="employee.age"
+              name="age"
+            />
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-left: 5px; text-align: center;">
+              <label for="department">Department </label>
+            </td>
+            <td style="text-align: center;">
+                <select [(ngModel)]="employee.department" name="department" required>
+                <option *ngFor="let department of Departments" [ngValue]="department" selected>
+                   {{department}}
+                </option>
+               </select>
+            </td>
+        </tr>
+      </table>
+      <table>
+          <tr>
+            <td style="padding-left: 5px; text-align: center;">
+              
+              </td>
+              <td style="text-align: right;">
+                <button mat-button (click)="save();">SAVE</button>&nbsp;&nbsp;&nbsp;
+                <button mat-button (click)="btnClose();">CLOSE</button>
+              </td>
+          </tr>
+      </table>
+      <div>
+      </div> 
+</div> 

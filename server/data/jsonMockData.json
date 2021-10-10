@@ -1,0 +1,16 @@
+{
+    "employee" : [ {
+        "id": 1,
+        "age" : 16,
+        "name" : "Nicholas",
+        "gender": "Male",
+        "Department": "IT"
+      }
+    ],
+    "menu" : [ 
+          
+    ],
+    "routingtables" : [
+     
+    ]
+  }

@@ -1,0 +1,74 @@
+<div class="grid-container"> 
+    <div>
+        <h3>Employee
+         <button class="addbtn" mat-raised-button  (click)="btnAddNewClick();">
+            <mat-icon mat-icon-button colour="white">add</mat-icon>
+            &nbsp;Add New
+          </button>
+  
+        </h3>
+      </div> 
+      <mat-table class="tab" #table [dataSource]="matTableDataSource" matSort>
+        <ng-container matColumnDef="edit">
+          <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+          <mat-cell class="flex-stretch" *matCellDef="let row">
+            <div>
+              <button mat-icon-button>
+                <mat-icon mat-icon-button color="primary" (click)="getTable(row);">edit</mat-icon>
+              </button>
+            </div>
+          </mat-cell>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="serialNumber">
+          <mat-header-cell *matHeaderCellDef>S.No</mat-header-cell>
+          <mat-cell *matCellDef="let row; let i = index">{{ (paginator.pageSize * paginator.pageIndex) + i+1}}</mat-cell>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="empid">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Employee ID</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.empid}}</mat-cell>
+        </ng-container>
+  
+      <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="gender">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Gender</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.gender}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="department">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Department</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.department}}</mat-cell>
+          </ng-container>
+          
+          <ng-container matColumnDef="age">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Age</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.age}}</mat-cell>
+          </ng-container>
+    
+          
+        <ng-container matColumnDef="delete">
+          <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+          <mat-cell class="flex-stretch" *matCellDef="let row">
+            <div>
+              <button mat-icon-button>
+                <mat-icon mat-icon-button color="warn" (click)="deleteTable(row);">delete</mat-icon>
+              </button>
+            </div>
+          </mat-cell>
+        </ng-container>
+  
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns; let i = index"></mat-row>
+      </mat-table>
+  
+      <mat-paginator #paginator [length]="100" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 25, 50, 100, 250]">
+      </mat-paginator>
+    </div>
+  

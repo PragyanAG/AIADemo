@@ -1,0 +1,27 @@
+.grid-container {
+    margin: 10px;
+  }
+  .showbtn {
+    position: absolute;
+    right: 10px;
+    color: black;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .half-width {
+    width: 45%;
+    margin-left: 30px;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

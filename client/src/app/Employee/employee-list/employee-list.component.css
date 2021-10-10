@@ -1,0 +1,8 @@
+.grid-container {
+  margin: 10px;
+}
+.addbtn {
+  position: absolute;
+  right: 10px;
+  color: black;
+}

@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons"); 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.custom-big-container .mat-dialog-container {
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background: lightblue;
+        position: absolute;
+        top: 10em;
+        left: 20em;
+        height: 350px;
+        width: 400px;
+        box-shadow: 0 0 5px rgb(0, 0, 0, 0.27);
+    
+}
+mat-toolbar  {
+    display: inline-block;
+    margin: 0 10px;
+    background:  crimson!important;
+    text-decoration: none;
+}

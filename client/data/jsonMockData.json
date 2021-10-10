@@ -1,0 +1,17 @@
+{
+    "employees" : [ {
+        "empid": "1",
+        "name" : "Nicholas",
+        "gender": "Male",
+        "department": "IT",
+        "age" : 16
+      }
+    ],
+    "menus" : [ 
+       
+     
+    ],
+    "routingtables" : [
+     
+    ]
+  }

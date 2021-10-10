@@ -1,0 +1,43 @@
+<mat-toolbar class="example-header">
+    <div style="background: crimson; color: white;">
+        <button mat-icon-button  (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon>reorder</mat-icon>
+      </button>
+    </div>
+    <img
+      width="70"
+      height="50"
+      style="background: crimson;"
+      alt="AIAMalasiyaDemo"
+      src="assets/images/logo.jpg"
+    />
+
+</mat-toolbar>
+<mat-sidenav-container class="router-container" [ngStyle]="{'top':'60px'}">
+    <mat-sidenav #drawer mode="side" opened  class="example-sidenav" [fixedInViewport]="false" 
+    class="sidenav"
+    fixedInViewport="true" 
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [opened]="!(isHandset$ | async)">
+
+    
+      <mat-nav-list class="mat-nav-style_">
+        <a mat-list-item routerLink="/dashboard">DASHBOARD</a>
+      </mat-nav-list>
+      <mat-nav-list class="mat-nav-style_">
+        <a mat-list-item routerLink="/Employee/empList">EMPLOYEE</a>
+      </mat-nav-list>
+      <mat-nav-list class="mat-nav-style_">
+        <a mat-list-item routerLink="/Menu/menuList">MENU</a>
+      </mat-nav-list>
+      <mat-nav-list class="mat-nav-style_">
+        <a mat-list-item routerLink="/Routing/routingList">ROUTING TABLES</a>
+      </mat-nav-list>
+   
+   </mat-sidenav> 
+   <mat-sidenav-content>
+    <router-outlet></router-outlet>
+   </mat-sidenav-content>
+</mat-sidenav-container>
